@@ -1,0 +1,14 @@
+version: "3"
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/usr/src/app:cached
+    # command: bash -c "echo hoge > hoge.txt && pip freeze > requirements.txt && echo fuga"
+    # command: pip install Django
+    # command: bash -c "python -m pip install Django && pip freeze > requirements.txt"
+    # command: django-admin startproject config
