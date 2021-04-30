@@ -1,8 +1,8 @@
 version: "3"
 services:
   backend:
-    # environment:
-    #   - PORT=8000
+    environment:
+      - DJANGO_SETTINGS_MODULE=config.settings.development
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -10,5 +10,4 @@ services:
       - "8000:8000"
     volumes:
       - ./backend:/usr/src/app:cached
-    # command: bash -c "python manage.py runserver 0.0.0.0:${PORT}"
     command: python manage.py runserver 0.0.0.0:8000

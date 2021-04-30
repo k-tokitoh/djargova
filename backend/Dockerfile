@@ -10,6 +10,3 @@ WORKDIR /usr/src/app
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
 COPY . .
-
-# EXPOSE $PORT
-# CMD bash -c "python manage.py runserver $PORT"
